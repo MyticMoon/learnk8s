@@ -1,0 +1,18 @@
+﻿apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: learnk8
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: learnk8
+    spec:
+      containers:
+      - name: learnk8
+        image: todydat/learnk8:v1
+        tty: true
+        ports:
+        - containerPort: 80
+        # containerPort is .NET Core port
